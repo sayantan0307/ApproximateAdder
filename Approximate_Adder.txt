@@ -1,0 +1,25 @@
+module Approx_Adder(output [11:0]S, input [11:0]A, [11:0]B);
+    assign A= 12'b000001010100;
+	 assign B= 12'b000010101100;
+	 wire [11:0] P,G;
+	 wire x1,x2,x3,x4,C0,C1,C2,C3,Ca1,Ca2,pp2,pp3;
+	 assign C0 = 0;
+	 PG_Generator pg1(P[3:0], G[3:0], A[3:0], B[3:0]);
+	 PG_Generator pg2(P[7:4], G[7:4], A[7:4], B[7:4]);
+	 PG_Generator pg3(P[11:8], G[11:8], A[11:8], B[11:8]);
+	 Carry_Generator cg1(C1,P[3:0],G[3:0],C0);
+	 and (x1,P[4],P[5]);
+    and (x2,P[5],P[6]);
+    and (pp2,P[7],x2);
+	 Mux_2x1 mux1(Ca1,G[3],C1,pp2);
+	 Carry_Generator cg2(C2,P[7:4],G[7:4],G[3]);
+	 and (x3,P[8],P[9]);
+    and (x4,P[9],P[10]);
+    and (pp3,P[11],x4);
+	 Mux_2x1 mux2(Ca2, G[7],C2,pp3);
+	 Carry_Generator cg3(C3,P[11:8],G[11:8],G[7]);
+	 Sub_Adder sa1(S[3:0],P[3:0],G[3:0],C0);
+	 Sub_Adder sa2(S[7:4],P[7:4],G[7:4],Ca1);
+	 Sub_Adder sa3(S[11:8],P[11:8],G[11:8],Ca2);
+
+endmodule

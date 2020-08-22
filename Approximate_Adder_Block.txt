@@ -1,0 +1,12 @@
+module Approx_Adder_Block( output C, pp, G0, [3:0] S, input [3:0] A, [3:0] B, C0);
+  wire [3:0] P, G;
+  wire x1,x2;
+  PG_Generator pg1(P,G,A,B);
+  assign G0 = G[3];
+  and (x1,P[0],P[1]);
+  and (x2,P[1],P[2]);
+  and (pp,P[3],x2);
+  Carry_Generator cg1(C,P,G,C0);
+  Sub_Adder sa1(S,P,G);
+
+endmodule

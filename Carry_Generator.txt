@@ -1,12 +1,12 @@
 module Carry_Generator(output C, input [3:0] P, [3:0] G, C0);
     wire C1,C2,C3,x0,x1,x2,x3;
-	 and (x0, P[0],C0);
-	 or (C1, G[0], x0);
-	 and (x1, P[1],C1);
-	 or (C2, G[1], x1);
+    and (x0, P[0],C0);
+    or (C1, G[0], x0);
+    and (x1, P[1],C1);
+    or (C2, G[1], x1);
     and (x2, P[2],C2);
-	 or (C3, G[2],x2);
+    or (C3, G[2],x2);
     and (x3, P[3],C3);
-	 or (C, G[3], x3);
+    or (C, G[3], x3);
 
 endmodule

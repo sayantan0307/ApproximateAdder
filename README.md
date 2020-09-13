@@ -12,6 +12,6 @@ Step 2: Using the binary adder module, create the PG_Generator module, as shown 
 
 Step 3: Then create the two other modules ( Carry_Generator and Sub_Adder) using the files with the same name. 
 
-Step 4: Using these 3 modules, we create a block of the Approximate Adder, which will add 4 bits. 3 such blocks are connected to form a 12-bit Adder. Follow the code in the Approximate_Adder_Block.txt file for creating one such block.
+Step 4: Using these 3 modules, we create a block of the Approximate Adder, which will add 4 bits. 3 such blocks are connected to form a 12-bit Adder. Follow the code in the Approximate_Adder_Block.txt file for creating one such block. In this case, instead of using these Approximate_Adder_Block files, the adder has been directly created using the smaller blocks. 
 
 Final Step: Connect three of the blocks, to form the 12-bit adder. Follow the file named Approximate_Adder.txt for the creation of such a block.

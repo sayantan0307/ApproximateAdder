@@ -1,5 +1,5 @@
 module Sub_Adder(output [3:0] S, input [3:0] P, [3:0] G, C);
-    wire y0,y1,y2, C1,C0;
+    wire y0,y1,y2, C1,C0,C2;
     xor (S[0], P[0], C);
     and (y0, P[0],C);
     or (C0, y0, G[0]);

@@ -7,6 +7,6 @@ module Approx_Adder_Block( output C, pp, G0, [3:0] S, input [3:0] A, [3:0] B, C0
   and (x2,P[1],P[2]);
   and (pp,P[3],x2);
   Carry_Generator cg1(C,P,G,C0);
-  Sub_Adder sa1(S,P,G);
+  Sub_Adder sa1(S,P,G,C0);
 
 endmodule
